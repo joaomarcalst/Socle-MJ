@@ -1,0 +1,97 @@
+João Pedro Marçal Storino
+Lab 02 - Text Editing and Processing
+
+Exercise 01 - Vim Basics
+1.	vimtutor
+
+2.	vim "place holder.txt"
+
+3. 	d}
+	:%s/[Ll]orem ipsum/Lipsum/g
+
+Exercise 02 - Text Processing
+1.	curl -o dracula https://www.gutenberg.org/cache/epub/345/pg345.txt
+
+2.	grep -n "START OF THE PROJECT GUTENBERG EBOOK" dracula (23)
+	grep -n "END OF THE PROJECT GUTENBERG EBOOK" dracula (15501)
+	sed -n '24,15500p' dracula > dracula_rem.txt
+
+3.	Arquivo Original
+		wc dracula (15851 [linhas] 164351 [palavras]  890394 [caracteres] dracula)
+	Arquivo Editado
+		wc dracula_rem.txt (15477 [linhas] 161321 [palavras]  870593 [caracteres] dracula_rem.txt)
+	Subtração
+		15502 (original) - 15477 (limpo) = 25 linhas removidas
+		135175 (original) - 134762 (limpo) = 413 palavras removidas
+		812344 (original) - 811050 (limpo) = 1294 caracteres removidos
+
+4.	grep -o '  \+' dracula_rem.txt | wc -l (751)
+	Transform Multiple Spaces into a Single Space
+		sed -E 's/^[[:space:]]+|[[:space:]]+$//g; s/[[:space:]]{2,}/ /g' dracula_rem.txt > dracula_rem_esp.txt
+	
+5.	wc -w dracula_rem_esp.txt (161321)
+
+6.	cat dracula_rem_esp.txt | tr -d '[:punct:]' | wc -w (160639)
+	Diferença: Pontuação separa palavras, ou seja, sinais de pontuação como apóstrofes, hifens e outros podem fazer com que algumas palavras sejam contadas de forma diferente. Por exemplo, “it’s” (com apóstrofo) é contado como uma única palavra, enquanto “its” (sem apóstrofo) também é uma palavra única, mas ao remover o apóstrofo, você pode criar duas palavras separadas, como “it s”.
+
+7.	cat dracula_rem_esp.txt | tr -d '[:punct:][:digit:]' > dracula_sem_pont.txt
+	tr ' ' '\n' < dracula_sem_pont.txt > dracula_wpl.txt
+	grep -v '^$' dracula_wpl.txt > dracula_limpo.txt
+	sort dracula_limpo.txt | uniq | wc -l (11204)
+
+8.	grep -woi '\bblood\b' dracula_limpo.txt | wc -l (102)
+
+9.	sort dracula_limpo.txt | uniq -c | sort -nr | head -n 20 | awk '{print $2 "," $1}' > word_freq.csv
+	echo "Word,Frequency" > temp.csv
+	cat word_freq.csv >> temp.csv
+	mv temp.csv word_freq.csv
+
+	Word	Frequency
+	the	7273
+	and	5655
+	I	4709
+	to	4414
+	of	3592
+	a	2847
+	in	2400
+	that	2383
+	he	1959
+	was	1862
+	it	1767
+	is	1474
+	as	1449
+	me	1443
+	for	1432
+	his	1381
+	not	1353
+	we	1229
+	with	1226
+	you	1187
+
+10.	tr -d '[:punct:][:digit:][:space:]' < dracula_limpo.txt | tr '[:upper:]' '[:lower:]' | fold -w1 | sort | uniq -c | sort -nr | head -n 10
+
+	79892 e
+	58600 t
+	52772 a
+	50680 o
+	43913 n
+	43561 h
+	42986 i
+	39850 s
+	35324 r
+	28717 d
+
+11.	curl -o frankenstein.txt https://www.gutenberg.org/cache/epub/36/pg36.txt
+	curl -o sherliock.txt https://www.gutenberg.org/files/1661/1661-0.txt
+	
+	tr -d '[:punct:]' < dracula_limpo.txt | tr '[:upper:]' '[:lower:]' | tr ' ' '\n' | grep -v '^$' | sort | uniq -c | sort -nr > dracula_freq.txt
+	tr -d '[:punct:]' < frankenstein.txt | tr '[:upper:]' '[:lower:]' | tr ' ' '\n' | grep -v '^$' | sort | uniq -c | sort -nr > frankenstein_freq.txt
+	tr -d '[:punct:]' < sherlock.txt | tr '[:upper:]' '[:lower:]' | tr ' ' '\n' | grep -v '^$' | sort | uniq -c | sort -nr > sherlock_freq.txt
+
+	awk '{print $2}' dracula_freq.txt > dracula_words.txt
+	awk '{print $2}' frankenstein_freq.txt > frankenstein_words.txt
+	awk '{print $2}' sherlock_freq.txt > sherlock_words.txt
+
+	paste -d ',' <(awk '{print NR "," $0}' dracula_words.txt) frankenstein_words.txt sherlock_words.txt > combined_freq.csv
+
+	

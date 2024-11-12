@@ -1,0 +1,49 @@
+João Pedro Marçal Storino
+Lab - The filesystem and working with it
+
+Exercise 1
+1. 	chsh -s /bin/bash
+2. 	pwd
+3. 	echo "Hello" 
+4.	cd /tmp
+	ls
+5.	a. ls -l
+	b. ls -tr
+	c. ls -ltr
+6. 	cd /
+	ls
+7.	a. cd ~
+	b. cd
+8.	cat /etc/services
+
+Exercise 2
+1.	mkdir ~/LFM
+	cd ~/LFM
+	pwd
+2. 	find /usr -name "README*" -size -10k
+3. 	cp /usr/share/vim/vim90/lang/README.txt .
+4. 	wc README.txt
+	grep -o '[.!?]' README.txt | wc -l
+	cat > rubish.docx
+	"teste"
+	control + D
+5.	ls -lh rubish.docx
+	du -h rubish.docx
+6. 	file rubish.docx == rubish.docx: ASCII text// Common apps such as windows notepad
+7.	cat rubish.docx // yes.
+8. 	mkdir temp
+	mv rubish.docx temp/rubish.txt
+
+Exercise 3
+1. 	ssh jp.marcalstorino@ens-srv-eftcl.emse.fr
+2. 	mkdir ~/RFM
+	cd ~/RFM
+	curl -o lorem_ipsum.txt https://ci.mines-stetienne.fr/cps2/course/efcl/data/lorem.ipsum
+3.	cp lorem_ipsum.txt "place holder.txt"
+	wc -w lorem_ipsum.txt // 46
+	grep -o '\.' lorem_ipsum.txt | wc -l // 5
+4. 	scp ~/LFM/README jp.marcalstorino@ens-srv-eftcl.emse.fr:~/RFM/
+	gunzip ~/RFM/README.gz
+	rsync -av ~/tmp/ jp.marcalstorino@ens-srv-eftcl.emse.fr:~/RFM/tmp/
+	rsync -av jp.marcalstorino@ens-srv-eftcl.emse.fr:~/RFM/tmp/ ~/tmp/
+
