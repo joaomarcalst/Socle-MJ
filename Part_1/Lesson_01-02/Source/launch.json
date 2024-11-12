@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configuration": [
+        {
+            "name": "Python: Current File",
+            "type": "pyhton",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        }
+    ]
+}

@@ -1,0 +1,122 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage[a4paper, margin=2cm]{geometry}
+
+\title{Descriptions of Configuration Files}
+\author{João Pedro Marçal Storino}
+
+
+\begin{document}
+
+\maketitle
+Questions of Tutorial 02
+
+\section{package.json from the ollama-js project}
+
+\subsection{What it is:}
+The \texttt{package.json} file is the central configuration file in Node.js or JavaScript projects that use the npm (Node Package Manager). It contains all the essential information about the project, including metadata, dependencies, scripts, and commands. It is crucial for managing and installing the libraries needed for development and running the project.
+
+\subsection{What it contains:}
+\begin{enumerate}
+    \item Project Metadata:
+    \begin{itemize}
+        \item \texttt{name}: The project name (e.g., \texttt{"ollama-js"}).
+        \item \texttt{version}: The current version of the project (e.g., \texttt{"1.0.0"}).
+        \item \texttt{description}: A brief description of the project.
+        \item \texttt{author}: Who created or maintains the project.
+        \item \texttt{license}: The license under which the project is distributed (e.g., \texttt{"MIT"}).
+    \end{itemize}
+    \item Dependencies:
+    \begin{itemize}
+        \item The dependencies section lists all the libraries the project needs to run. For example, \texttt{"axios": "\^{}0.21.1"} indicates that the project depends on the axios library, version 0.21.1 or higher.
+        \item The devDependencies section lists dependencies required only during development, such as testing or build tools.
+    \end{itemize}
+    \item Scripts:
+    \begin{itemize}
+        \item The scripts section allows defining custom commands that can be run using npm. A common example would be:
+
+        \begin{verbatim}
+        "scripts": {
+          "start": "node index.js",
+          "test": "jest"
+        }
+        \end{verbatim}
+        Running \texttt{npm start} would launch the server by executing \texttt{index.js}, while \texttt{npm test} would run the tests using \texttt{jest}.
+    \end{itemize}
+    \item Other Information:
+    \begin{itemize}
+        \item \texttt{keywords}: A list of keywords describing the project.
+        \item \texttt{repository}: Information about the version control repository (like GitHub).
+        \item \texttt{engines}: Specifies the versions of Node.js or npm that the project requires to run correctly.
+    \end{itemize}
+\end{enumerate}
+
+\subsection{What it is used for:}
+The \texttt{package.json} serves as the central configuration point for the project. It allows developers to install dependencies, run scripts, and share project information with other developers. Whenever a new developer clones the project, they can simply run \texttt{npm install} to ensure all dependencies are installed correctly.
+
+\section{pyproject.toml from the ollama-python project}
+
+\subsection{What it is:}
+The \texttt{pyproject.toml} is a configuration file introduced by PEP 518 in the Python ecosystem. It defines how the build environment for a Python project should be configured, specifying the build system, dependencies, and other development tools. This file replaces older files like \texttt{setup.py} or \texttt{setup.cfg} in some workflows and is widely used by modern package management tools such as Poetry and Flit.
+
+\subsection{What it contains:}
+\begin{enumerate}
+    \item Build Settings:
+    \begin{verbatim}
+    [build-system]
+    requires = ["setuptools>=40.8.0", "wheel"]
+    build-backend = "setuptools.build_meta"
+    \end{verbatim}
+    \item Dependencies:
+    \begin{verbatim}
+    [tool.poetry.dependencies]
+    python = "^3.7"
+    requests = "^2.24.0"
+    \end{verbatim}
+    \item Formatting Tools:
+    \begin{verbatim}
+    [tool.black]
+    line-length = 88
+    \end{verbatim}
+    \item Additional Sections: 
+    The \texttt{pyproject.toml} may also contain configurations for other utilities, such as \texttt{pytest}, \texttt{mypy}, or \texttt{isort}.
+\end{enumerate}
+
+\subsection{What it is used for:}
+The \texttt{pyproject.toml} centralizes the build, dependency, and development tool configurations for a Python project. It improves package management and allows for a standardized way to define how the project should be configured and run.
+
+\section{pom.xml from the ollama4j project}
+
+\subsection{What it is:}
+The \texttt{pom.xml} (Project Object Model) is a configuration file used in Maven projects to manage the build lifecycle of Java applications. Maven uses \texttt{pom.xml} to define dependencies, configure plugins, and manage information about the project, such as version, name, and metadata.
+
+\subsection{What it contains:}
+\begin{enumerate}
+    \item Project Information:
+    \begin{verbatim}
+    <groupId>com.emse.spring</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+    <version>2.5.4</version>
+    \end{verbatim}
+    \item Plugins:
+    \begin{verbatim}
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.8.1</version>
+      <configuration>
+        <source>1.8</source>
+        <target>1.8</target>
+      </configuration>
+    </plugin>
+    \end{verbatim}
+    \item Profiles: 
+    Profiles allow configuring different build environments (e.g., development, production). Each profile can have specific dependency and plugin configurations, providing flexibility in managing the project across different environments.
+\end{enumerate}
+
+\subsection{What it is used for:}
+The \texttt{pom.xml} manages the entire build lifecycle of a Java project, including compilation, testing, packaging, and dependency management. It also enables the use of different plugins and specific configurations for various environments, such as development and production.
+
+\end{document}
