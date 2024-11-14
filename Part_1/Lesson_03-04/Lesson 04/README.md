@@ -61,6 +61,14 @@ This project uses Gradle to automate the following tasks:
 
 - **Packaging**: The project is packaged into a JAR file using Gradle's `bootJar` task. The JAR file can be found in the `build/libs` directory.
 
+## Running Tests
+
+To run the project tests, use the command:
+
+  ```bash
+  gradle test
+  ```
+
 ## Build Tool
 
 This project uses **Gradle** as the build tool. Gradle automates the following tasks:
