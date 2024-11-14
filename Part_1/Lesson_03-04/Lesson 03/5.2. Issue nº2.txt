@@ -1,0 +1,5 @@
+NUMPY WITH ANSWERS
+https://github.com/numpy/numpy/issues/27749
+
+NUMPY TUTORIAL FOLLOWING ISSUE
+https://github.com/numpy/numpy-tutorials/issues/238
