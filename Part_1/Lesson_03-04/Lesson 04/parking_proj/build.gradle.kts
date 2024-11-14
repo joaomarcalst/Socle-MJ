@@ -27,6 +27,7 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
+// Increment version task
 tasks.register("incrementVersion") {
     doLast {
         // Dividing the CurrentVersion to make increments, after
@@ -40,4 +41,10 @@ tasks.register("incrementVersion") {
         project.version = "${parts[0]}.${parts[1]}.$patch"
         println("Version updated to: ${project.version}")
     }
+}
+
+// Task to put the program in a Jar
+tasks.named<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar") {
+    enabled = true
+    archiveFileName.set("parking-app.jar")
 }
