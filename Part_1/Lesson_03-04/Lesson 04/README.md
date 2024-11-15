@@ -21,8 +21,8 @@ Ensure that you have the following installed on your machine:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/joaomarcalst/Parking-MJ.git
-    cd Parking-MJ
+    git clone https://github.com/joaomarcalst/Socle-MJ.git
+    cd Part_1/Lesson_03-04/Lesson_04
     ```
 
 2. Install the project dependencies with Gradle:
