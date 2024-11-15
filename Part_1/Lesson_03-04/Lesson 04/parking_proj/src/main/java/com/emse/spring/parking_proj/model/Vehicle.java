@@ -7,20 +7,16 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Vehicle {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String licensePlate;
-    private String ownerName;
+    private String model;
+    private String color;
 
-    public Vehicle() {}
-
-    public Vehicle(String licensePlate, String ownerName) {
-        this.licensePlate = licensePlate;
-        this.ownerName = ownerName;
-    }
-
+    // Getters and setters
     public Long getId() {
         return id;
     }
@@ -37,11 +33,19 @@ public class Vehicle {
         this.licensePlate = licensePlate;
     }
 
-    public String getOwnerName() {
-        return ownerName;
+    public String getModel() {
+        return model;
     }
 
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 }
