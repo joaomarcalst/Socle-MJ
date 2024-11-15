@@ -26,6 +26,8 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter") // Core Spring Boot dependency
     testImplementation("org.springframework.boot:spring-boot-starter-test") // Spring Boot testing support
     testRuntimeOnly("org.junit.platform:junit-platform-launcher") // JUnit platform launcher for testing
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa") // libs to use JPA in your project
+    implementation("com.h2database:h2") // libs to use a H2 database
 }
 
 // Configure test tasks to use JUnit Platform
