@@ -1,22 +1,24 @@
 package com.emse.spring.parking_proj.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
-@Entity
+@Entity // Marks this class as a JPA Entity, mapping it to a database table.
+@Table(name = "VEHICLE") // Specifies the table name in the database.
 public class Vehicle {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id // Marks the field as the primary key of the table.
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Specifies auto-incrementing for the primary key.
+    @Column(name = "ID") // Maps this field to the "ID" column in the database table.
     private Long id;
 
-    private String licensePlate;
-    private String model;
-    private String color;
+    @Column(name = "MAKE", nullable = false, length = 50) // Maps this field to the "MAKE" column in the table.
+    private String make;
 
-    // Getters and setters
+    @Column(name = "MODEL", nullable = false, length = 50) // Maps this field to the "MODEL" column in the table.
+    private String model;
+
+    // Getters and Setters to access and modify the fields.
+
     public Long getId() {
         return id;
     }
@@ -25,12 +27,12 @@ public class Vehicle {
         this.id = id;
     }
 
-    public String getLicensePlate() {
-        return licensePlate;
+    public String getMake() {
+        return make;
     }
 
-    public void setLicensePlate(String licensePlate) {
-        this.licensePlate = licensePlate;
+    public void setMake(String make) {
+        this.make = make;
     }
 
     public String getModel() {
@@ -41,11 +43,12 @@ public class Vehicle {
         this.model = model;
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "id=" + id +
+                ", make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                '}';
     }
 }
