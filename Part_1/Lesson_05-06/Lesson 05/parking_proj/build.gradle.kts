@@ -10,10 +10,10 @@ pmd {
     toolVersion = "6.55.0" // Última versão recomendada
     isIgnoreFailures = false // O build falha se houver erros de PMD
     ruleSets = listOf() // Lista de regras pode ser personalizada
-    ruleSetFiles = files("config/pmd/ruleset.xml") // Caminho para o arquivo de configuração de regras
+    ruleSetFiles = files("/Users/marcalstorino/EMSE/MJ-INFORMATIQUE/Socle technique de l'informatique/Part_1/Lesson_05-06/Lesson 05/parking_proj/config/pmd/ruleset.xml") // Caminho para o arquivo de configuração de regras
 }
 
-tasks.withType<org.gradle.api.plugins.quality.Pmd>().configureEach {
+tasks.withType<Pmd>().configureEach {
     reports {
         xml.required.set(true) // Gera relatório em XML
         html.required.set(true) // Gera relatório em HTML

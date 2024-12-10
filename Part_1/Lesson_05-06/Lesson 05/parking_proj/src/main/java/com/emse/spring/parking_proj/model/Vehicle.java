@@ -1,6 +1,11 @@
 package com.emse.spring.parking_proj.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 /**
  * Entity representing a vehicle.
@@ -16,7 +21,7 @@ public class Vehicle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    private Long id;
+    private Long vehicleId;
 
     /**
      * The make of the vehicle (e.g., brand).
@@ -30,20 +35,38 @@ public class Vehicle {
     @Column(name = "MODEL", nullable = false, length = 50)
     private String model;
 
-    // Getters and setters
-    public Long getId() {
-        return id;
+    /**
+     * Default constructor.
+     */
+    public Vehicle() {
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    /**
+     * Parameterized constructor.
+     *
+     * @param vehicleId the unique ID of the vehicle.
+     * @param make the make of the vehicle.
+     * @param model the model of the vehicle.
+     */
+    public Vehicle(Long vehicleId, String make, String model) {
+        this.vehicleId = vehicleId;
+        this.make = make;
+        this.model = model;
+    }
+
+    public Long getVehicleId() {
+        return vehicleId;
+    }
+
+    public void setVehicleId(final Long vehicleId) {
+        this.vehicleId = vehicleId;
     }
 
     public String getMake() {
         return make;
     }
 
-    public void setMake(String make) {
+    public void setMake(final String make) {
         this.make = make;
     }
 
@@ -51,14 +74,14 @@ public class Vehicle {
         return model;
     }
 
-    public void setModel(String model) {
+    public void setModel(final String model) {
         this.model = model;
     }
 
     @Override
     public String toString() {
         return "Vehicle{" +
-                "id=" + id +
+                "vehicleId=" + vehicleId +
                 ", make='" + make + '\'' +
                 ", model='" + model + '\'' +
                 '}';

@@ -21,7 +21,7 @@ public class VehicleController {
      *
      * @param vehicleService the service handling vehicle operations.
      */
-    public VehicleController(VehicleService vehicleService) {
+    public VehicleController(final VehicleService vehicleService) {
         this.vehicleService = vehicleService;
     }
 
@@ -42,20 +42,19 @@ public class VehicleController {
      * @return the created {@link Vehicle}.
      */
     @PostMapping
-    public Vehicle addVehicle(@RequestBody Vehicle vehicle) {
+    public Vehicle addVehicle(@RequestBody final Vehicle vehicle) {
         return vehicleService.addVehicle(vehicle);
     }
 
     /**
      * Deletes a vehicle by its ID.
      *
-     * @param id the ID of the vehicle to delete.
+     * @param vehicleId the ID of the vehicle to delete.
      * @return a {@link ResponseEntity} indicating the operation's success.
      */
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteVehicle(@PathVariable Long id) {
-        vehicleService.deleteVehicle(id);
+    @DeleteMapping("/{vehicleId}")
+    public ResponseEntity<Void> deleteVehicle(@PathVariable final Long vehicleId) {
+        vehicleService.deleteVehicle(vehicleId);
         return ResponseEntity.noContent().build();
     }
 }
-

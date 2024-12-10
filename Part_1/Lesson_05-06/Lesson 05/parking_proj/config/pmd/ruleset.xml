@@ -1,15 +1,34 @@
 <?xml version="1.0"?>
-<ruleset name="Custom Ruleset"
+<ruleset name="Custom Rules"
          xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0
-         http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
-
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
     <description>
-        Custom ruleset for the Parking Project.
+        Conjunto de regras personalizadas para análise estática de código.
     </description>
 
-    <rule ref="category/java/bestpractices.xml/UnusedImports"/>
-    <rule ref="category/java/codestyle.xml/ShortVariable"/>
-    <rule ref="category/java/errorprone.xml/AvoidPrintStackTrace"/>
+    <!-- Regras de Estilo de Código -->
+    <rule ref="category/java/codestyle.xml/VariableNamingConventions" />
+
+    <!-- Regras de Design -->
+    <rule ref="category/java/design.xml/ExcessiveMethodLength">
+        <properties>
+            <property name="minimum" value="50" />
+        </properties>
+    </rule>
+    <rule ref="category/java/design.xml/ExcessiveClassLength">
+        <properties>
+            <property name="minimum" value="1000" />
+        </properties>
+    </rule>
+
+    <!-- Regras Propensas a Erros -->
+    <rule ref="category/java/errorprone.xml/NullAssignment" />
+    <rule ref="category/java/errorprone.xml/EmptyCatchBlock" />
+
+    <!-- Regras de Multithreading -->
+    <rule ref="category/java/multithreading.xml/AvoidThreadGroup" />
+
+    <!-- Regras de Desempenho -->
+    <rule ref="category/java/performance.xml/AvoidInstantiatingObjectsInLoops" />
 </ruleset>

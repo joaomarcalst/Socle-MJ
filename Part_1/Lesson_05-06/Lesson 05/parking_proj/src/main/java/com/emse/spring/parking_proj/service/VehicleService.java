@@ -18,7 +18,7 @@ public class VehicleService {
      *
      * @param vehicleRepository the repository for vehicle data.
      */
-    public VehicleService(VehicleRepository vehicleRepository) {
+    public VehicleService(final VehicleRepository vehicleRepository) {
         this.vehicleRepository = vehicleRepository;
     }
 
@@ -37,16 +37,16 @@ public class VehicleService {
      * @param vehicle the vehicle to add.
      * @return the saved {@link Vehicle}.
      */
-    public Vehicle addVehicle(Vehicle vehicle) {
+    public Vehicle addVehicle(final Vehicle vehicle) {
         return vehicleRepository.save(vehicle);
     }
 
     /**
      * Deletes a vehicle by its ID.
      *
-     * @param id the ID of the vehicle to delete.
+     * @param vehicleId the ID of the vehicle to delete.
      */
-    public void deleteVehicle(Long id) {
-        vehicleRepository.deleteById(id);
+    public void deleteVehicle(final Long vehicleId) {
+        vehicleRepository.deleteById(vehicleId);
     }
 }
