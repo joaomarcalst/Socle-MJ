@@ -41,7 +41,7 @@ To test PMD manually, use the following command:
 
 `./pmd-bin-6.55.0/`
 
-### 4. Verify PMD Installation
+### 6. Verify PMD Installation
 Ensure that PMD is installed and accessible via the following directory:
 
 ```
