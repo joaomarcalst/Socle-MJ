@@ -35,6 +35,12 @@ repositories {
     mavenCentral() // Central repository to pull libraries and dependencies
 }
 
+// Unit testing dependencies
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
+    testImplementation("org.mockito:mockito-core:5.6.0")
+}
+
 // Logging dependencies
 dependencies {
     implementation("org.slf4j:slf4j-api:2.0.9")

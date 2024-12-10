@@ -11,14 +11,14 @@ import java.util.List;
  */
 @Service
 public class VehicleService {
+
     private final VehicleRepository vehicleRepository;
 
     /**
      * Constructor for {@link VehicleService}.
-     *
-     * @param vehicleRepository the repository for vehicle data.
+     * @param vehicleRepository the repository handling vehicle operations.
      */
-    public VehicleService(final VehicleRepository vehicleRepository) {
+    public VehicleService(VehicleRepository vehicleRepository) {
         this.vehicleRepository = vehicleRepository;
     }
 
@@ -47,6 +47,9 @@ public class VehicleService {
      * @param vehicleId the ID of the vehicle to delete.
      */
     public void deleteVehicle(final Long vehicleId) {
+        if (!vehicleRepository.existsById(vehicleId)) {
+            throw new IllegalArgumentException("Vehicle with ID " + vehicleId + " not found.");
+        }
         vehicleRepository.deleteById(vehicleId);
     }
 }
