@@ -1,4 +1,4 @@
-### Parking Project
+# Parking Project
 
 This project simulates the operation and performance of electric buses in a parking lot scenario. It leverages **Gradle** to automate development tasks such as dependency management, project versioning, compilation, and packaging.
 
@@ -111,6 +111,21 @@ We welcome contributions! Follow these steps to contribute:
 4. Open a pull request on GitHub.
 
 Ensure your changes include tests and proper documentation.
+
+---
+
+## Generating Reference Documentation
+
+This project includes comprehensive Javadoc documentation for all classes and methods. You can generate the reference documentation by following these steps:
+
+1. Open a terminal and navigate to the root directory of the project.
+2. Run the following Gradle command to generate the Javadoc:
+   ```bash
+   ./gradlew javadoc
+3.	The generated documentation will be located in the `build/docs/javadoc` directory.
+4.	Open the `index.html file in a web browser to view the documentation.
+
+This documentation provides detailed information about the project structure, classes, methods, and their functionality.
 
 ---
 
