@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Parking Management</h1>
+    </header>
+    <main>
+        <section id="add-vehicle">
+            <h2>Add a New Vehicle</h2>
+            <form id="add-vehicle-form">
+                <label for="make">Make:</label>
+                <input type="text" id="make" name="make" required>
+                <label for="model">Model:</label>
+                <input type="text" id="model" name="model" required>
+                <button type="submit">Add Vehicle</button>
+            </form>
+        </section>
+        <section id="vehicle-list">
+            <h2>List of Vehicles</h2>
+            <ul id="vehicles">
+                <!-- Vehicle list will be dynamically populated -->
+            </ul>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
