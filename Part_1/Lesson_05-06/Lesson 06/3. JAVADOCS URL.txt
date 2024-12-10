@@ -1,0 +1,14 @@
+LINK TO COMMIT: https://github.com/joaomarcalst/Socle-MJ/commit/161d4a99c13297a7891d820a4f29e7e18b4cfb23
+
+LINK TO HOW TO ADD JAVADOCS COMMIT: https://github.com/joaomarcalst/Socle-MJ/commit/fc07e34378be6b3dc6cddeb96241875681a4e09d
+
+** Documentation Added **
+
+I have added Javadoc documentation to the relevant classes and methods in the project. The documentation includes detailed descriptions of the functionality, parameters, and return values for the following files:
+	• CorsConfig
+	• VehicleController
+	• Vehicle
+	• VehicleRepository
+	• VehicleService
+
+
