@@ -2,6 +2,8 @@ package com.emse.spring.parking_proj.controller;
 
 import com.emse.spring.parking_proj.model.Vehicle;
 import com.emse.spring.parking_proj.service.VehicleService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +16,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/vehicles")
 public class VehicleController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(VehicleController.class); // Corrigido para maiúsculas
     private final VehicleService vehicleService;
 
     /**
@@ -32,7 +36,15 @@ public class VehicleController {
      */
     @GetMapping
     public List<Vehicle> getAllVehicles() {
-        return vehicleService.getAllVehicles();
+        LOGGER.info("Request received to retrieve all vehicles."); // INFO log
+        try {
+            List<Vehicle> vehicles = vehicleService.getAllVehicles();
+            LOGGER.debug("Retrieved {} vehicles from the database.", vehicles.size()); // DEBUG log
+            return vehicles;
+        } catch (Exception e) {
+            LOGGER.error("Error occurred while retrieving vehicles.", e); // ERROR log
+            throw e;
+        }
     }
 
     /**
@@ -43,7 +55,15 @@ public class VehicleController {
      */
     @PostMapping
     public Vehicle addVehicle(@RequestBody final Vehicle vehicle) {
-        return vehicleService.addVehicle(vehicle);
+        LOGGER.info("Request received to add a new vehicle: {}", vehicle); // INFO log
+        try {
+            Vehicle createdVehicle = vehicleService.addVehicle(vehicle);
+            LOGGER.debug("Vehicle added successfully: {}", createdVehicle); // DEBUG log
+            return createdVehicle;
+        } catch (Exception e) {
+            LOGGER.error("Error occurred while adding a new vehicle: {}", vehicle, e); // ERROR log
+            throw e;
+        }
     }
 
     /**
@@ -54,7 +74,14 @@ public class VehicleController {
      */
     @DeleteMapping("/{vehicleId}")
     public ResponseEntity<Void> deleteVehicle(@PathVariable final Long vehicleId) {
-        vehicleService.deleteVehicle(vehicleId);
-        return ResponseEntity.noContent().build();
+        LOGGER.info("Request received to delete vehicle with ID: {}", vehicleId); // INFO log
+        try {
+            vehicleService.deleteVehicle(vehicleId);
+            LOGGER.debug("Vehicle with ID {} deleted successfully.", vehicleId); // DEBUG log
+            return ResponseEntity.noContent().build();
+        } catch (Exception e) {
+            LOGGER.error("Error occurred while deleting vehicle with ID: {}", vehicleId, e); // ERROR log
+            throw e;
+        }
     }
 }

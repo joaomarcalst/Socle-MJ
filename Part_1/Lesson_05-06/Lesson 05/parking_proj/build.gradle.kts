@@ -35,6 +35,12 @@ repositories {
     mavenCentral() // Central repository to pull libraries and dependencies
 }
 
+// Logging dependencies
+dependencies {
+    implementation("org.slf4j:slf4j-api:2.0.9")
+    implementation("ch.qos.logback:logback-classic:1.4.11")
+}
+
 // Define project dependencies
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter") // Core Spring Boot dependency
