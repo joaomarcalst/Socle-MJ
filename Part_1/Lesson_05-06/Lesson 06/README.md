@@ -1,121 +1,125 @@
-Aqui está a versão atualizada e aprimorada do seu README com todas as melhorias necessárias:
+### Parking Project
 
-Parking Project
+This project simulates the operation and performance of electric buses in a parking lot scenario. It leverages **Gradle** to automate development tasks such as dependency management, project versioning, compilation, and packaging.
 
-This project simulates the operation and performance of electric buses in a parking lot scenario. The primary goal is to utilize Gradle for automating development tasks, such as dependency management, project versioning, compilation, and packaging.
+---
 
-Prerequisites
+### Prerequisites
 
-Before running the project, ensure that the following tools are installed on your machine:
-	•	Java 21: Required for running the application. Verify your installed version with:
+Before running the project, ensure the following tools are installed on your machine:
 
-java -version
+- **Java 21**: Required to run the application. Verify your installation with:
+  `java -version`
 
+- **Gradle**: Used for building and managing the project. Check the installation with:
+  `gradle -v`
 
-	•	Gradle: Used for building and managing the project. Check if Gradle is installed with:
+---
 
-gradle -v
+### Installation
 
+1. Clone the repository and navigate to the project directory:
+   `git clone https://github.com/joaomarcalst/Parking-MJ.git`
+   `cd Parking-MJ`
 
+2. Navigate to the folder located at:
+   `/Part_1/Lesson_05-06/Lesson_06`
 
-Installation
-	1.	Clone the repository:
+3. Build the project by installing dependencies and preparing it for execution:
+   `./gradlew build`
 
-git clone https://github.com/joaomarcalst/Parking-MJ.git
-cd Parking-MJ
+---
 
-
-	2.	Build the project:
-Install dependencies and prepare the project by running:
-
-./gradlew build
-
-
-
-Running the Project
+### Running the Project
 
 You can run the project in two ways:
-	1.	Directly using Gradle:
 
-./gradlew bootRun
+1. **Directly using Gradle**:
+   `./gradlew bootRun`
 
+2. **Using the packaged JAR file**:
+   After building the project, execute the following command:
+   `java -jar build/libs/parking-app.jar`
 
-	2.	Using the packaged JAR file:
-After building the project, you can run the JAR file:
+---
 
-java -jar build/libs/parking-app.jar
+### Features
 
+- **REST API**: The project provides endpoints for managing vehicles in the parking lot:
+  - `GET /vehicles`: List all vehicles.
+  - `POST /vehicles`: Add a new vehicle.
+  - `DELETE /vehicles/{id}`: Remove a vehicle by its ID.
 
+- **Gradle Automation**: Manages tasks such as dependency handling, compilation, and version control.
 
-Features
-	•	REST API: The project provides an API for managing vehicles in the parking lot. Key endpoints include:
-	•	GET /vehicles: List all vehicles.
-	•	POST /vehicles: Add a new vehicle.
-	•	DELETE /vehicles/{id}: Remove a vehicle by ID.
-	•	Gradle Automation: Gradle handles tasks such as dependency management, compilation, and project versioning.
-	•	Custom Gradle Tasks: A custom task for incrementing the project version:
+- **Custom Gradle Task**: A custom task is available for incrementing the project version:
+  `./gradlew incrementVersion`
 
-./gradlew incrementVersion
+---
 
-
-
-Running Tests
+### Running Tests
 
 To execute the test suite and verify the project’s functionality, run:
+`./gradlew test`
 
-./gradlew test
+Test reports are generated in the `build/reports/tests` directory.
 
-Test reports can be found in the build/reports/tests directory.
+---
 
-Documentation
-	•	Javadoc: The project includes detailed documentation for all classes and methods. To generate the documentation:
+### Documentation
 
-./gradlew javadoc
+- **Javadoc**: Detailed documentation for all classes and methods can be generated with:
+  `./gradlew javadoc`
+  The output will be located in the `build/docs/javadoc` directory.
 
-The generated files can be found in build/docs/javadoc.
+- **Tutorial**: Refer to the `docs/tutorial.md` file for a complete guide to using the project.
 
-	•	Tutorial: A complete tutorial is available in the tutorial file for learning how to use the project effectively.
+---
 
-Project Structure
-	•	src/main: Contains the source code for the application.
-	•	src/test: Contains the test cases.
-	•	build.gradle.kts: The Gradle configuration file.
-	•	docs: Includes tutorials and reference documentation.
+### Project Structure
 
-Build Tool
+- `src/main`: Application source code.
+- `src/test`: Unit tests for the project.
+- `build.gradle.kts`: Gradle configuration file.
+- `docs`: Contains tutorials and reference documentation.
 
-This project uses Gradle for automation:
-	•	Dependency management
-	•	Compilation and packaging
-	•	Version control
-	•	Test execution
+---
 
-For more details about Gradle, visit the official Gradle website.
+### Build Tool
 
-Contribution
+This project uses **Gradle** for:
+- Dependency management
+- Compilation and packaging
+- Version control
+- Test execution
 
-We welcome contributions to improve the project! Here’s how you can help:
-	1.	Fork the repository.
-	2.	Create a new branch for your feature or bug fix:
+For more details, visit the [Gradle official website](https://gradle.org/).
 
-git checkout -b feature/your-feature
+---
 
+### Contribution
 
-	3.	Commit your changes and push to your fork:
+We welcome contributions! Follow these steps to contribute:
 
-git push origin feature/your-feature
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix:
+   `git checkout -b feature/your-feature`
 
+3. Commit your changes and push them to your fork:
+   `git push origin feature/your-feature`
 
-	4.	Open a pull request on GitHub.
+4. Open a pull request on GitHub.
 
-Make sure your changes are covered with tests and documented properly.
+Ensure your changes include tests and proper documentation.
 
-License
+---
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+### License
 
-Release
+This project is licensed under the **MIT License**. See the `LICENSE` file for details.
 
-You can find the latest release of the project here.
+---
 
-Se precisar de mais alguma modificação ou quiser algo mais específico, é só avisar!
+### Release
+
+Find the latest release of the project [here](https://github.com/joaomarcalst/Parking-MJ/releases).
