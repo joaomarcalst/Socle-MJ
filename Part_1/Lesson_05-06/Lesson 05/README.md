@@ -129,6 +129,27 @@ This documentation provides detailed information about the project structure, cl
 
 ---
 
+## Static Code Analysis
+
+This project uses PMD for static code analysis.
+
+### How to Run the Analysis
+1. Execute the PMD analysis:
+
+   ```bash
+   ./gradlew pmdMain
+
+2.	Review the reports:
+- HTML Report: `build/reports/pmd/main.html`
+- XML Report: `build/reports/pmd/main.xml`
+
+## PMD Configuration
+
+The PMD configuration is in the following files:
+- [build.gradle.kts](https://github.com/joaomarcalst/Socle-MJ/blob/main/Part_1/Lesson_05-06/Lesson%2005/parking_proj/build.gradle.kts)
+- [ruleset.xml](https://github.com/joaomarcalst/Socle-MJ/blob/main/Part_1/Lesson_05-06/Lesson%2005/parking_proj/config/pmd/ruleset.xml)
+---
+
 ### License
 
 This project is licensed under the **MIT License**. See the `LICENSE` file for details.
