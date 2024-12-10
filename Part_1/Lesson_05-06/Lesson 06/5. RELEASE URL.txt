@@ -1,0 +1,1 @@
+LINK TO RELEASE: https://github.com/joaomarcalst/Socle-MJ/releases/tag/v1.0.0
