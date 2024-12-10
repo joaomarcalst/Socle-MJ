@@ -1,85 +1,121 @@
-# Parking Project
+Aqui está a versão atualizada e aprimorada do seu README com todas as melhorias necessárias:
 
-This is a project focused on simulating the performance and operation of electric buses in a parking lot scenario. The goal is to use a build tool (Gradle) to automate the development tasks, such as dependency management, project versioning, compilation, and packaging.
+Parking Project
 
-## Prerequisites
+This project simulates the operation and performance of electric buses in a parking lot scenario. The primary goal is to utilize Gradle for automating development tasks, such as dependency management, project versioning, compilation, and packaging.
 
-Ensure that you have the following installed on your machine:
+Prerequisites
 
-- **Java 21**: For running the application. You can check your installed version with the command:
-  ```bash
-  java -version
-  ```
+Before running the project, ensure that the following tools are installed on your machine:
+	•	Java 21: Required for running the application. Verify your installed version with:
 
-- **Gradle**: For building and managing the project dependencies. You can check if Gradle is installed with:
-  ```bash
-  gradle -v
-  ```
+java -version
 
-## Installation
 
-1. Clone the repository:
+	•	Gradle: Used for building and managing the project. Check if Gradle is installed with:
 
-    ```bash
-    git clone https://github.com/joaomarcalst/Socle-MJ.git
-    cd Part_1/Lesson_03-04/Lesson_04
-    ```
+gradle -v
 
-2. Install the project dependencies with Gradle:
 
-    ```bash
-    gradle build
-    ```
 
-## Running the Project
+Installation
+	1.	Clone the repository:
 
-To run the project, use the following command:
+git clone https://github.com/joaomarcalst/Parking-MJ.git
+cd Parking-MJ
 
-```bash
-gradle bootRun
-```
 
-Alternatively, you can run the application with the JAR file after building it:
+	2.	Build the project:
+Install dependencies and prepare the project by running:
 
-```bash
+./gradlew build
+
+
+
+Running the Project
+
+You can run the project in two ways:
+	1.	Directly using Gradle:
+
+./gradlew bootRun
+
+
+	2.	Using the packaged JAR file:
+After building the project, you can run the JAR file:
+
 java -jar build/libs/parking-app.jar
-```
 
-## Tasks Automated with Gradle
 
-This project uses Gradle to automate the following tasks:
 
-- **Dependency Management**: External dependencies are defined in `build.gradle.kts` and are automatically downloaded and managed by Gradle.
-  
-- **Compilation**: The Java code is compiled automatically by Gradle as part of the build process.
+Features
+	•	REST API: The project provides an API for managing vehicles in the parking lot. Key endpoints include:
+	•	GET /vehicles: List all vehicles.
+	•	POST /vehicles: Add a new vehicle.
+	•	DELETE /vehicles/{id}: Remove a vehicle by ID.
+	•	Gradle Automation: Gradle handles tasks such as dependency management, compilation, and project versioning.
+	•	Custom Gradle Tasks: A custom task for incrementing the project version:
 
-- **Project Version Management**: The version of the project is managed by Gradle. You can increment the version using a custom task:
+./gradlew incrementVersion
 
-    ```bash
-    gradle incrementVersion
-    ```
 
-- **Packaging**: The project is packaged into a JAR file using Gradle's `bootJar` task. The JAR file can be found in the `build/libs` directory.
 
-## Running Tests
+Running Tests
 
-To run the project tests, use the command:
+To execute the test suite and verify the project’s functionality, run:
 
-  ```bash
-  gradle test
-  ```
+./gradlew test
 
-## Build Tool
+Test reports can be found in the build/reports/tests directory.
 
-This project uses **Gradle** as the build tool. Gradle automates the following tasks:
+Documentation
+	•	Javadoc: The project includes detailed documentation for all classes and methods. To generate the documentation:
 
-- Dependency management
-- Compilation of source files
-- Version management
-- Packaging into JAR files
+./gradlew javadoc
 
-For more information on Gradle, visit the [official Gradle website](https://gradle.org).
+The generated files can be found in build/docs/javadoc.
 
-## Contribution
+	•	Tutorial: A complete tutorial is available in the tutorial file for learning how to use the project effectively.
 
-Feel free to fork the project and submit pull requests for improvements. Make sure to follow the guidelines and best practices while contributing.
+Project Structure
+	•	src/main: Contains the source code for the application.
+	•	src/test: Contains the test cases.
+	•	build.gradle.kts: The Gradle configuration file.
+	•	docs: Includes tutorials and reference documentation.
+
+Build Tool
+
+This project uses Gradle for automation:
+	•	Dependency management
+	•	Compilation and packaging
+	•	Version control
+	•	Test execution
+
+For more details about Gradle, visit the official Gradle website.
+
+Contribution
+
+We welcome contributions to improve the project! Here’s how you can help:
+	1.	Fork the repository.
+	2.	Create a new branch for your feature or bug fix:
+
+git checkout -b feature/your-feature
+
+
+	3.	Commit your changes and push to your fork:
+
+git push origin feature/your-feature
+
+
+	4.	Open a pull request on GitHub.
+
+Make sure your changes are covered with tests and documented properly.
+
+License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+Release
+
+You can find the latest release of the project here.
+
+Se precisar de mais alguma modificação ou quiser algo mais específico, é só avisar!
