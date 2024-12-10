@@ -6,22 +6,46 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Service class for handling vehicle operations.
+ */
 @Service
 public class VehicleService {
     private final VehicleRepository vehicleRepository;
 
+    /**
+     * Constructor for {@link VehicleService}.
+     *
+     * @param vehicleRepository the repository for vehicle data.
+     */
     public VehicleService(VehicleRepository vehicleRepository) {
         this.vehicleRepository = vehicleRepository;
     }
 
+    /**
+     * Retrieves all vehicles.
+     *
+     * @return a list of all {@link Vehicle} objects.
+     */
     public List<Vehicle> getAllVehicles() {
         return vehicleRepository.findAll();
     }
 
+    /**
+     * Adds a new vehicle.
+     *
+     * @param vehicle the vehicle to add.
+     * @return the saved {@link Vehicle}.
+     */
     public Vehicle addVehicle(Vehicle vehicle) {
         return vehicleRepository.save(vehicle);
     }
 
+    /**
+     * Deletes a vehicle by its ID.
+     *
+     * @param id the ID of the vehicle to delete.
+     */
     public void deleteVehicle(Long id) {
         vehicleRepository.deleteById(id);
     }

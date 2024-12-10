@@ -2,23 +2,35 @@ package com.emse.spring.parking_proj.model;
 
 import jakarta.persistence.*;
 
-@Entity // Marks this class as a JPA Entity, mapping it to a database table.
-@Table(name = "VEHICLE") // Specifies the table name in the database.
+/**
+ * Entity representing a vehicle.
+ * Maps to the "VEHICLE" table in the database.
+ */
+@Entity
+@Table(name = "VEHICLE")
 public class Vehicle {
 
-    @Id // Marks the field as the primary key of the table.
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Specifies auto-incrementing for the primary key.
-    @Column(name = "ID") // Maps this field to the "ID" column in the database table.
+    /**
+     * The unique identifier for the vehicle.
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     private Long id;
 
-    @Column(name = "MAKE", nullable = false, length = 50) // Maps this field to the "MAKE" column in the table.
+    /**
+     * The make of the vehicle (e.g., brand).
+     */
+    @Column(name = "MAKE", nullable = false, length = 50)
     private String make;
 
-    @Column(name = "MODEL", nullable = false, length = 50) // Maps this field to the "MODEL" column in the table.
+    /**
+     * The model of the vehicle.
+     */
+    @Column(name = "MODEL", nullable = false, length = 50)
     private String model;
 
-    // Getters and Setters to access and modify the fields.
-
+    // Getters and setters
     public Long getId() {
         return id;
     }
