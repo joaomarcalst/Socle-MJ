@@ -1,0 +1,3 @@
+LINK TO README COMMIT: https://github.com/joaomarcalst/Socle-MJ/commit/d123ab67ebe354d873fc247e928b90b138750e02
+
+LINK TO CONFIGURATION OF PMD COMMIT: https://github.com/joaomarcalst/Socle-MJ/commit/452a743108f3bb45698053793f41476a1b9250b1
